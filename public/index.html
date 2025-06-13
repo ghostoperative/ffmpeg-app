@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; media-src 'self';">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <title>Video Timeline Fixer</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <noscript>
+    <div class="noscript-warning">
+      This application requires JavaScript to function properly. Please enable JavaScript in your browser settings.
+    </div>
+  </noscript>
+  
+  <div class="container">
+    <h1>Video Timeline Fixer</h1>
+    <p>Upload a video with timeline issues to fix it using FFmpeg</p>
+    
+    <div class="upload-container">
+      <form id="upload-form">
+        <div class="file-input-wrapper">
+          <input type="file" id="video-input" accept="video/*" required>
+          <label for="video-input" class="btn">Choose Video</label>
+          <span id="file-name">No file chosen</span>
+        </div>
+        <div class="file-size-info">
+          <small>Maximum file size: 500MB</small>
+        </div>
+        <button type="submit" class="btn" id="upload-btn">Process Video</button>
+      </form>
+    </div>
+    
+    <div id="progress-container" class="hidden">
+      <div class="progress-bar">
+        <div id="progress-bar-fill"></div>
+      </div>
+      <p id="progress-text">Processing: 0%</p>
+    </div>
+    
+    <div id="result-container" class="hidden">
+      <h2>Processed Video</h2>
+      <video id="result-video" controls></video>
+      <div class="button-group">
+        <a href="#" id="download-link" class="btn" download>Download Video</a>
+        <button id="process-another" class="btn">Process Another Video</button>
+      </div>
+    </div>
+    
+    <div id="error-container" class="hidden">
+      <div class="error-message">
+        <h3>Error</h3>
+        <p id="error-text"></p>
+        <button id="try-again" class="btn">Try Again</button>
+      </div>
+    </div>
+  </div>
+  
+  <script src="app.js"></script>
+</body>
+</html>
