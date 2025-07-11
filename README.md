@@ -48,6 +48,8 @@ This application:
 - `/processed` - Storage for processed videos (auto-cleaned after 1 hour)
 - `server.js` - Main application server
 
+AIzaSyDptt10FoSJnHXaFYfCJtdQhzgnkKes2Qk
+
 ## Notes
 
 - Maximum upload size is set to 500MB
